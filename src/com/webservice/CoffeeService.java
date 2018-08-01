@@ -23,6 +23,15 @@ import com.qualifier.Resource;
 
 @Path("/coffeecab")
 public class CoffeeService {
+	
+	/**
+	* GET - http://localhost:8080/coffee-cab/rest/coffeecab/coffee/
+	* POST - http://localhost:8080/coffee-cab/rest/coffeecab/coffee/
+	* PUT - http://localhost:8080/coffee-cab/rest/coffeecab/coffee/{name} 
+	* like http://localhost:8080/coffee-cab/rest/coffeecab/coffee/arabica
+	* DELETE - the same like PUT
+	* http://localhost:8080/coffee-cab/rest/coffeecab/coffee/{name}
+	*/
 
 	@Inject
 	private EntityManager em;

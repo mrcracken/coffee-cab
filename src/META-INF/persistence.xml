@@ -8,10 +8,18 @@
         
 	<persistence-unit name="persistenceUnit" transaction-type="RESOURCE_LOCAL">
 	    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+		 <!-- 
+		     Go to wildfly-12.0.0.Final\standalone\configuration\standalone.xml and search for a datasource. In MySQL Datasource copy jndi-name like jndi-name="java:/MySqlDS and insert it
+		     in <jta-data-source> here
+		  -->
 		<jta-data-source>java:/MySqlDS</jta-data-source>
 		<class>com.entity.Coffee</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			<!--
+			 For hibernate.hbm2ddl.auto value visit
+         		 https://stackoverflow.com/questions/438146/hibernate-hbm2ddl-auto-possible-values-and-what-they-do 
+         		-->
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.show_sql" value="false" />
 		</properties>
